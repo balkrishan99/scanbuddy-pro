@@ -6,6 +6,16 @@ import BillOfMaterials from "@/components/BillOfMaterials";
 import DownloadSection from "@/components/DownloadSection";
 import DesignJustification from "@/components/DesignJustification";
 import Footer from "@/components/Footer";
+import AppOverview from "@/components/AppOverview";
+import AppArchitecture from "@/components/AppArchitecture";
+import ScannerDashboard from "@/components/ScannerDashboard";
+import CalibrationModule from "@/components/CalibrationModule";
+import ScanWorkflow from "@/components/ScanWorkflow";
+import AINoiseReduction from "@/components/AINoiseReduction";
+import AutomationFeatures from "@/components/AutomationFeatures";
+import SustainabilitySection from "@/components/SustainabilitySection";
+import UIScreens from "@/components/UIScreens";
+import ConnectionDiagram from "@/components/ConnectionDiagram";
 
 const Index = () => {
   return (
@@ -25,6 +35,39 @@ const Index = () => {
         <section id="downloads">
           <DownloadSection />
         </section>
+        
+        {/* App Documentation */}
+        <section id="app-overview">
+          <AppOverview />
+        </section>
+        <section id="architecture">
+          <AppArchitecture />
+        </section>
+        <section id="dashboard">
+          <ScannerDashboard />
+        </section>
+        <section id="calibration">
+          <CalibrationModule />
+        </section>
+        <section id="workflow">
+          <ScanWorkflow />
+        </section>
+        <section id="ai-processing">
+          <AINoiseReduction />
+        </section>
+        <section id="automation">
+          <AutomationFeatures />
+        </section>
+        <section id="sustainability">
+          <SustainabilitySection />
+        </section>
+        <section id="ui-screens">
+          <UIScreens />
+        </section>
+        <section id="connection">
+          <ConnectionDiagram />
+        </section>
+        
         <section id="justification">
           <DesignJustification />
         </section>
