@@ -10,7 +10,10 @@ import AppOverview from "@/components/AppOverview";
 import AppArchitecture from "@/components/AppArchitecture";
 import ScannerDashboard from "@/components/ScannerDashboard";
 import CalibrationModule from "@/components/CalibrationModule";
+import CalibrationWizard from "@/components/CalibrationWizard";
+import CalibrationMethodology from "@/components/CalibrationMethodology";
 import ScanWorkflow from "@/components/ScanWorkflow";
+import ScanSimulation from "@/components/ScanSimulation";
 import AINoiseReduction from "@/components/AINoiseReduction";
 import AutomationFeatures from "@/components/AutomationFeatures";
 import SustainabilitySection from "@/components/SustainabilitySection";
@@ -49,8 +52,17 @@ const Index = () => {
         <section id="calibration">
           <CalibrationModule />
         </section>
+        <section id="calibration-wizard">
+          <CalibrationWizard />
+        </section>
+        <section id="calibration-methodology">
+          <CalibrationMethodology />
+        </section>
         <section id="workflow">
           <ScanWorkflow />
+        </section>
+        <section id="scan-simulation">
+          <ScanSimulation />
         </section>
         <section id="ai-processing">
           <AINoiseReduction />
