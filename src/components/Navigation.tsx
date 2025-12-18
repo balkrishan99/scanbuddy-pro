@@ -4,6 +4,23 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navLinks = [
+    { label: "Specs", href: "#specs" },
+    { label: "Assembly", href: "#assembly" },
+    { label: "BOM", href: "#bom" },
+    { label: "Downloads", href: "#downloads" },
+    { label: "System Requirements", href: "#system-requirements" },
+    { label: "Error Diagnostics", href: "#error-diagnostics" },
+    { label: "Data Management", href: "#data-management" },
+    { label: "Export Interop", href: "#export-interoperability" },
+    { label: "Security", href: "#security-safety" },
+    { label: "Plugin Architecture", href: "#plugin-architecture" },
+    { label: "Validation", href: "#validation-testing" },
+    { label: "Roadmap", href: "#project-roadmap" },
+    { label: "Licensing", href: "#licensing-deployment" },
+    { label: "Glossary", href: "#glossary-references" },
+    { label: "Rationale", href: "#justification" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -19,21 +36,15 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#specs" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-              Specs
-            </a>
-            <a href="#assembly" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-              Assembly
-            </a>
-            <a href="#bom" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-              BOM
-            </a>
-            <a href="#downloads" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-              Downloads
-            </a>
-            <a href="#justification" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-              Rationale
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
           {/* CTA Button */}
@@ -56,21 +67,16 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-4">
-              <a href="#specs" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-                Specs
-              </a>
-              <a href="#assembly" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-                Assembly
-              </a>
-              <a href="#bom" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-                BOM
-              </a>
-              <a href="#downloads" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-                Downloads
-              </a>
-              <a href="#justification" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display">
-                Rationale
-              </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors font-display"
+                >
+                  {link.label}
+                </a>
+              ))}
               <Button variant="hero" size="sm" className="w-full mt-2">
                 Get Started
               </Button>

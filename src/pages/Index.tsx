@@ -19,6 +19,16 @@ import AutomationFeatures from "@/components/AutomationFeatures";
 import SustainabilitySection from "@/components/SustainabilitySection";
 import UIScreens from "@/components/UIScreens";
 import ConnectionDiagram from "@/components/ConnectionDiagram";
+import SystemRequirements from "@/components/SystemRequirements";
+import ErrorDiagnostics from "@/components/ErrorDiagnostics";
+import DataManagement from "@/components/DataManagement";
+import ExportInteroperability from "@/components/ExportInteroperability";
+import SecuritySafety from "@/components/SecuritySafety";
+import PluginArchitecture from "@/components/PluginArchitecture";
+import ValidationTesting from "@/components/ValidationTesting";
+import ProjectRoadmap from "@/components/ProjectRoadmap";
+import LicensingDeployment from "@/components/LicensingDeployment";
+import GlossaryReferences from "@/components/GlossaryReferences";
 
 const Index = () => {
   return (
@@ -78,6 +88,37 @@ const Index = () => {
         </section>
         <section id="connection">
           <ConnectionDiagram />
+        </section>
+
+        <section id="system-requirements">
+          <SystemRequirements />
+        </section>
+        <section id="error-diagnostics">
+          <ErrorDiagnostics />
+        </section>
+        <section id="data-management">
+          <DataManagement />
+        </section>
+        <section id="export-interoperability">
+          <ExportInteroperability />
+        </section>
+        <section id="security-safety">
+          <SecuritySafety />
+        </section>
+        <section id="plugin-architecture">
+          <PluginArchitecture />
+        </section>
+        <section id="validation-testing">
+          <ValidationTesting />
+        </section>
+        <section id="project-roadmap">
+          <ProjectRoadmap />
+        </section>
+        <section id="licensing-deployment">
+          <LicensingDeployment />
+        </section>
+        <section id="glossary-references">
+          <GlossaryReferences />
         </section>
         
         <section id="justification">
