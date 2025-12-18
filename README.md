@@ -10,7 +10,7 @@
 ![Hero Scan Animation](assets/hero_scan.gif)
 
 <p align="center">
-	<a href="https://scanbuddy-pro-demo.example.com" target="_blank">Live Demo</a> ·
+	<a href="https://balkrishan99.github.io/scanbuddy-pro/" target="_blank">Live Demo</a> ·
 	<a href="#-quick-start">Quick Start</a> ·
 	<a href="#-roadmap">Roadmap</a>
 </p>
