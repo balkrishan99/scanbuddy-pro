@@ -2,15 +2,15 @@ import { FileText, Download, FileCode, File } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const files = [
-  { name: "External Shell CAD", format: "STEP", size: "12.4 MB", icon: FileCode, category: "CAD Files", url: "/downloads/external-shell-cad.step" },
-  { name: "Internal Layout", format: "STEP", size: "8.7 MB", icon: FileCode, category: "CAD Files", url: "/downloads/internal-layout.step" },
-  { name: "Exploded Assembly", format: "STEP", size: "15.2 MB", icon: FileCode, category: "CAD Files", url: "/downloads/exploded-assembly.step" },
-  { name: "Housing Top", format: "STL", size: "4.2 MB", icon: File, category: "3D Print Files", url: "/downloads/housing-top.stl" },
-  { name: "Housing Bottom", format: "STL", size: "5.8 MB", icon: File, category: "3D Print Files", url: "/downloads/housing-bottom.stl" },
-  { name: "Turntable Mount", format: "STL", size: "2.1 MB", icon: File, category: "3D Print Files", url: "/downloads/turntable-mount.stl" },
-  { name: "Wiring Schematic", format: "PDF", size: "1.2 MB", icon: FileText, category: "Documentation", url: "/downloads/wiring-schematic.pdf" },
-  { name: "Assembly Guide", format: "PDF", size: "3.5 MB", icon: FileText, category: "Documentation", url: "/downloads/assembly-guide.pdf" },
-  { name: "Calibration Manual", format: "PDF", size: "0.8 MB", icon: FileText, category: "Documentation", url: "/downloads/calibration-manual.pdf" },
+  { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: "/downloads/external-shell.step" },
+  { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: "/downloads/internal-layout.step" },
+  { name: "Exploded Assembly", format: "STEP", size: "1.5 KB", icon: FileCode, category: "CAD Files", url: "/downloads/exploded-assembly.step" },
+  { name: "Housing Top", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: "/downloads/housing-top.stl" },
+  { name: "Housing Bottom", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: "/downloads/housing-bottom.stl" },
+  { name: "Turntable Mount", format: "STL", size: "0.5 KB", icon: File, category: "3D Print Files", url: "/downloads/turntable-mount.stl" },
+  { name: "Wiring Schematic", format: "MD", size: "2.1 KB", icon: FileText, category: "Documentation", url: "/downloads/wiring-schematic.md" },
+  { name: "Assembly Guide", format: "MD", size: "3.7 KB", icon: FileText, category: "Documentation", url: "/downloads/assembly-guide.md" },
+  { name: "Calibration Manual", format: "MD", size: "4.1 KB", icon: FileText, category: "Documentation", url: "/downloads/calibration-manual.md" },
 ];
 
 const categories = [...new Set(files.map(f => f.category))];

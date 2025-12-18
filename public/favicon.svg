@@ -1,23 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">LowCost3DScanner emblem</title>
-  <desc id="desc">Badge style logo showing a camera inside a hexagon frame with a cube and ribbon</desc>
-  <rect width="512" height="512" fill="#f5f7fa" rx="36" />
-  <polygon points="256 36 431 136 431 320 256 420 81 320 81 136" fill="#f5f7fa" stroke="#1d3c63" stroke-width="20" stroke-linejoin="round" />
-  <line x1="256" y1="116" x2="256" y2="340" stroke="#d24b43" stroke-width="12" stroke-linecap="round" />
-  <line x1="148" y1="178" x2="364" y2="278" stroke="#d24b43" stroke-width="12" stroke-linecap="round" />
-  <line x1="364" y1="178" x2="148" y2="278" stroke="#d24b43" stroke-width="12" stroke-linecap="round" />
-  <rect x="164" y="160" width="184" height="144" rx="24" fill="#ffffff" stroke="#1d3c63" stroke-width="12" />
-  <circle cx="256" cy="232" r="52" fill="#ffffff" stroke="#1d3c63" stroke-width="12" />
-  <line x1="224" y1="200" x2="288" y2="264" stroke="#1d3c63" stroke-width="10" stroke-linecap="round" />
-  <rect x="312" y="188" width="28" height="28" rx="6" fill="#1d3c63" />
-  <circle cx="328" cy="252" r="10" fill="#d24b43" />
-  <circle cx="328" cy="282" r="10" fill="#d24b43" />
-  <rect x="204" y="132" width="64" height="24" rx="8" fill="#1d3c63" />
-  <rect x="230" y="120" width="16" height="20" rx="6" fill="#1d3c63" />
-  <path d="M256 312l38 22v44l-38 22-38-22v-44z" fill="#f5f7fa" stroke="#d24b43" stroke-width="12" stroke-linejoin="round" />
-  <path d="M96 324l-32 18v40l96 56h192l96-56v-40l-32-18" fill="#1d3c63" stroke="#1d3c63" stroke-width="8" stroke-linejoin="round" />
-  <path d="M120 324l136 78 136-78" fill="#203f66" />
-  <rect x="116" y="360" width="280" height="84" rx="16" fill="#ffffff" stroke="#1d3c63" stroke-width="10" />
-  <text x="256" y="404" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="44" text-anchor="middle" fill="#1d3c63" font-weight="600">LOWCOST 3DSCANNER</text>
-  <text x="256" y="440" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="40" text-anchor="middle" fill="#1d3c63" font-weight="700">(LS)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">ScanBuddy-Pro favicon</title>
+  <desc id="desc">Stylised hexagon camera badge for ScanBuddy-Pro</desc>
+  <defs>
+    <linearGradient id="favGradient" x1="32" y1="32" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#47C2E3" />
+      <stop offset="1" stop-color="#1F8FB4" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="192" height="192" rx="36" fill="#0F1A26" />
+  <path d="M96 22L158 58V134L96 170L34 134V58L96 22Z" stroke="url(#favGradient)" stroke-width="10" stroke-linejoin="round" fill="#0F1A26" />
+  <rect x="60" y="76" width="72" height="52" rx="14" stroke="#E3F5FF" stroke-width="7" fill="#102233" />
+  <circle cx="96" cy="102" r="20" fill="#0F1A26" stroke="#47C2E3" stroke-width="7" />
+  <circle cx="124" cy="90" r="8" fill="#47C2E3" />
+  <line x1="68" y1="76" x2="124" y2="76" stroke="#47C2E3" stroke-width="7" stroke-linecap="round" />
+  <path d="M96 128L112 138L96 148L80 138L96 128Z" fill="#47C2E3" />
 </svg>

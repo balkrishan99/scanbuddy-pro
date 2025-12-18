@@ -1,4 +1,5 @@
 import { Github, Mail, ExternalLink } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 const Footer = () => {
   return (
@@ -6,9 +7,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display text-primary-foreground font-bold">SP</span>
-            </div>
+            <img
+              src={logo}
+              alt="ScanBuddy-Pro logo"
+              className="w-10 h-10 rounded-lg border border-primary/40"
+            />
             <span className="font-display text-lg">ScanBuddy-Pro</span>
           </div>
 

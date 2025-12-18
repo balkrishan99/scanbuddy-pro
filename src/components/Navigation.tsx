@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.svg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +29,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display text-primary-foreground font-bold text-sm">SP</span>
-            </div>
+            <img
+              src={logo}
+              alt="ScanBuddy-Pro logo"
+              className="w-10 h-10 rounded-lg border border-primary/40"
+            />
             <span className="font-display text-lg hidden sm:block">ScanBuddy-Pro</span>
           </div>
 
