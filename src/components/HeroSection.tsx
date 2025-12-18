@@ -40,13 +40,17 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg">
-                <Download className="w-5 h-5" />
-                Download CAD Files
+              <Button asChild variant="hero" size="lg">
+                <a href="#downloads" className="inline-flex items-center gap-2">
+                  <Download className="w-5 h-5" />
+                  Download CAD Files
+                </a>
               </Button>
-              <Button variant="glass" size="lg">
-                <Eye className="w-5 h-5" />
-                View Documentation
+              <Button asChild variant="glass" size="lg">
+                <a href="#app-overview" className="inline-flex items-center gap-2">
+                  <Eye className="w-5 h-5" />
+                  View Documentation
+                </a>
               </Button>
             </div>
 
