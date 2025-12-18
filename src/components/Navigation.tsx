@@ -29,9 +29,9 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display text-primary-foreground font-bold text-sm">LS</span>
+              <span className="font-display text-primary-foreground font-bold text-sm">SP</span>
             </div>
-            <span className="font-display text-lg hidden sm:block">LowCost3DScanner</span>
+            <span className="font-display text-lg hidden sm:block">ScanBuddy-Pro</span>
           </div>
 
           {/* Desktop Navigation */}

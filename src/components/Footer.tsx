@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display text-primary-foreground font-bold">LS</span>
+              <span className="font-display text-primary-foreground font-bold">SP</span>
             </div>
-            <span className="font-display text-lg">LowCost3DScanner</span>
+            <span className="font-display text-lg">ScanBuddy-Pro</span>
           </div>
 
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">

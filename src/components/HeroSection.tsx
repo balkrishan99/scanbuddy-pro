@@ -29,7 +29,7 @@ const HeroSection = () => {
                 OPEN SOURCE PROJECT
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight">
-                Low-Cost
+                ScanBuddy-Pro
                 <br />
                 <span className="gradient-text">3D Laser Scanner</span>
               </h1>
@@ -87,15 +87,24 @@ const HeroSection = () => {
             </div>
             
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <FileCode className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-medium">Export Ready</p>
-                <p className="text-xs text-muted-foreground">.STL .OBJ .PLY</p>
-              </div>
-            </div>
+            <Button
+              asChild
+              variant="glass"
+              size="lg"
+              className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 flex items-center gap-3 text-left transition-transform hover:-translate-y-1"
+            >
+              <a href="#downloads">
+                <span className="flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                    <FileCode className="w-5 h-5 text-primary" />
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm font-medium">Export Ready</span>
+                    <span className="text-xs text-muted-foreground">.STL .OBJ .PLY</span>
+                  </span>
+                </span>
+              </a>
+            </Button>
           </div>
         </div>
       </div>

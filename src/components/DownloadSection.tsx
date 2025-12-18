@@ -2,15 +2,15 @@ import { FileText, Download, FileCode, File } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const files = [
-  { name: "External Shell CAD", format: "STEP", size: "12.4 MB", icon: FileCode, category: "CAD Files" },
-  { name: "Internal Layout", format: "STEP", size: "8.7 MB", icon: FileCode, category: "CAD Files" },
-  { name: "Exploded Assembly", format: "STEP", size: "15.2 MB", icon: FileCode, category: "CAD Files" },
-  { name: "Housing Top", format: "STL", size: "4.2 MB", icon: File, category: "3D Print Files" },
-  { name: "Housing Bottom", format: "STL", size: "5.8 MB", icon: File, category: "3D Print Files" },
-  { name: "Turntable Mount", format: "STL", size: "2.1 MB", icon: File, category: "3D Print Files" },
-  { name: "Wiring Schematic", format: "PDF", size: "1.2 MB", icon: FileText, category: "Documentation" },
-  { name: "Assembly Guide", format: "PDF", size: "3.5 MB", icon: FileText, category: "Documentation" },
-  { name: "Calibration Manual", format: "PDF", size: "0.8 MB", icon: FileText, category: "Documentation" },
+  { name: "External Shell CAD", format: "STEP", size: "12.4 MB", icon: FileCode, category: "CAD Files", url: "/downloads/external-shell-cad.step" },
+  { name: "Internal Layout", format: "STEP", size: "8.7 MB", icon: FileCode, category: "CAD Files", url: "/downloads/internal-layout.step" },
+  { name: "Exploded Assembly", format: "STEP", size: "15.2 MB", icon: FileCode, category: "CAD Files", url: "/downloads/exploded-assembly.step" },
+  { name: "Housing Top", format: "STL", size: "4.2 MB", icon: File, category: "3D Print Files", url: "/downloads/housing-top.stl" },
+  { name: "Housing Bottom", format: "STL", size: "5.8 MB", icon: File, category: "3D Print Files", url: "/downloads/housing-bottom.stl" },
+  { name: "Turntable Mount", format: "STL", size: "2.1 MB", icon: File, category: "3D Print Files", url: "/downloads/turntable-mount.stl" },
+  { name: "Wiring Schematic", format: "PDF", size: "1.2 MB", icon: FileText, category: "Documentation", url: "/downloads/wiring-schematic.pdf" },
+  { name: "Assembly Guide", format: "PDF", size: "3.5 MB", icon: FileText, category: "Documentation", url: "/downloads/assembly-guide.pdf" },
+  { name: "Calibration Manual", format: "PDF", size: "0.8 MB", icon: FileText, category: "Documentation", url: "/downloads/calibration-manual.pdf" },
 ];
 
 const categories = [...new Set(files.map(f => f.category))];
@@ -50,9 +50,27 @@ const DownloadSection = () => {
                           <p className="text-xs text-muted-foreground">{file.format} • {file.size}</p>
                         </div>
                       </div>
-                      <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Download className="w-4 h-4" />
-                      </Button>
+                      {file.url ? (
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="icon"
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <a href={file.url} download aria-label={`Download ${file.name}`}>
+                            <Download className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          disabled
+                          className="opacity-40 cursor-not-allowed"
+                        >
+                          <Download className="w-4 h-4" />
+                        </Button>
+                      )}
                     </div>
                   ))}
               </div>
