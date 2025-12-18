@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# ScanBuddy Pro
 
-## Project info
+ScanBuddy Pro is an end-to-end knowledge hub for our low-cost 3D laser scanner initiative. The site packages mechanical documentation, calibration flows, advanced software modules, and professional guidance so builders can move from prototype to production-ready workflows.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Contents
 
-## How can I edit this code?
+- Marketing-ready landing page
+- Hardware assembly and BOM documentation
+- Scan automation, AI post-processing, and dashboard walkthroughs
+- Professional appendices covering system requirements, diagnostics, data governance, interoperability, security, plugins, validation, roadmap, licensing, and glossary references
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js 18+
+- npm 9+
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/balkrishan99/scanbuddy-pro.git
+cd scanbuddy-pro
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server boots at http://localhost:8080. Use Ctrl+C to stop it.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` – hot-reload development server
+- `npm run build` – production bundle
+- `npm run preview` – preview the production build locally
+- `npm run lint` – TypeScript + ESLint checks (resolves before committing)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+	components/      // UI modules and documentation sections
+	pages/           // Top-level route composition
+	lib/             // Shared utilities
+public/            // Static assets (favicon, robots.txt)
+```
 
-This project is built with:
+## Tech Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Vite + TypeScript + React 18
+- Tailwind CSS with shadcn-ui components
+- Lucide icons and custom design tokens
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Any static hosting platform that understands the Vite output works:
 
-## Can I connect a custom domain to my Lovable project?
+1. Run `npm run build`.
+2. Deploy the `dist/` folder to your preferred provider (Vercel, Netlify, GitHub Pages, etc.).
 
-Yes, you can!
+## Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Fork and clone the repository.
+2. Create a feature branch: `git checkout -b feature/<name>`.
+3. Make your changes and run `npm run lint`.
+4. Commit using conventional messages.
+5. Open a pull request with screenshots or notes describing the update.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## License
+
+See `LICENSE` for details. If you need OEM or enterprise distribution terms, reach out via the contact channels listed on the website footer.
