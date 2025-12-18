@@ -1,16 +1,23 @@
 import { FileText, Download, FileCode, File } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const addBase = (path: string) => {
+  const base = import.meta.env.BASE_URL || "/";
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${normalizedBase}${normalizedPath}`;
+};
+
 const files = [
-  { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: "/downloads/external-shell.step" },
-  { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: "/downloads/internal-layout.step" },
-  { name: "Exploded Assembly", format: "STEP", size: "1.5 KB", icon: FileCode, category: "CAD Files", url: "/downloads/exploded-assembly.step" },
-  { name: "Housing Top", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: "/downloads/housing-top.stl" },
-  { name: "Housing Bottom", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: "/downloads/housing-bottom.stl" },
-  { name: "Turntable Mount", format: "STL", size: "0.5 KB", icon: File, category: "3D Print Files", url: "/downloads/turntable-mount.stl" },
-  { name: "Wiring Schematic", format: "MD", size: "2.1 KB", icon: FileText, category: "Documentation", url: "/downloads/wiring-schematic.md" },
-  { name: "Assembly Guide", format: "MD", size: "3.7 KB", icon: FileText, category: "Documentation", url: "/downloads/assembly-guide.md" },
-  { name: "Calibration Manual", format: "MD", size: "4.1 KB", icon: FileText, category: "Documentation", url: "/downloads/calibration-manual.md" },
+  { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/external-shell.step") },
+  { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/internal-layout.step") },
+  { name: "Exploded Assembly", format: "STEP", size: "1.5 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/exploded-assembly.step") },
+  { name: "Housing Top", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/housing-top.stl") },
+  { name: "Housing Bottom", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/housing-bottom.stl") },
+  { name: "Turntable Mount", format: "STL", size: "0.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/turntable-mount.stl") },
+  { name: "Wiring Schematic", format: "MD", size: "2.1 KB", icon: FileText, category: "Documentation", url: addBase("downloads/wiring-schematic.md") },
+  { name: "Assembly Guide", format: "MD", size: "3.7 KB", icon: FileText, category: "Documentation", url: addBase("downloads/assembly-guide.md") },
+  { name: "Calibration Manual", format: "MD", size: "4.1 KB", icon: FileText, category: "Documentation", url: addBase("downloads/calibration-manual.md") },
 ];
 
 const categories = [...new Set(files.map(f => f.category))];
