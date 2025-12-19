@@ -1,4 +1,4 @@
-# LowCost3DScanner (OpenScan3D)
+# ScanBuddy(OpenScan3D)
 
 ![Platform](https://img.shields.io/badge/Platform-Professional%20Access-blue)
 ![Build Cost](https://img.shields.io/badge/Cost-~%24150-orange)
