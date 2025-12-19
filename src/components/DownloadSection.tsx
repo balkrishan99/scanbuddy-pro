@@ -8,23 +8,32 @@ const addBase = (path: string) => {
   return `${normalizedBase}${normalizedPath}`;
 };
 
+const handleDownload = (file: string) => {
+  const link = document.createElement("a");
+  link.href = addBase(`downloads/${file}`);
+  link.download = file;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const files = [
-  { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/external-shell.step") },
-  { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/internal-layout.step") },
-  { name: "Exploded Assembly", format: "STEP", size: "1.5 KB", icon: FileCode, category: "CAD Files", url: addBase("downloads/exploded-assembly.step") },
-  { name: "Housing Top", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/housing-top.stl") },
-  { name: "Housing Bottom", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/housing-bottom.stl") },
-  { name: "Turntable Mount", format: "STL", size: "0.5 KB", icon: File, category: "3D Print Files", url: addBase("downloads/turntable-mount.stl") },
-  { name: "Wiring Schematic", format: "MD", size: "2.1 KB", icon: FileText, category: "Documentation", url: addBase("downloads/wiring-schematic.md") },
-  { name: "Assembly Guide", format: "MD", size: "3.7 KB", icon: FileText, category: "Documentation", url: addBase("downloads/assembly-guide.md") },
-  { name: "Calibration Manual", format: "MD", size: "4.1 KB", icon: FileText, category: "Documentation", url: addBase("downloads/calibration-manual.md") },
+  { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", file: "external-shell.step" },
+  { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", file: "internal-layout.step" },
+  { name: "Exploded Assembly", format: "STEP", size: "1.5 KB", icon: FileCode, category: "CAD Files", file: "exploded-assembly.step" },
+  { name: "Housing Top", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", file: "housing-top.stl" },
+  { name: "Housing Bottom", format: "STL", size: "1.5 KB", icon: File, category: "3D Print Files", file: "housing-bottom.stl" },
+  { name: "Turntable Mount", format: "STL", size: "0.5 KB", icon: File, category: "3D Print Files", file: "turntable-mount.stl" },
+  { name: "Wiring Schematic", format: "MD", size: "2.1 KB", icon: FileText, category: "Documentation", file: "wiring-schematic.md" },
+  { name: "Assembly Guide", format: "MD", size: "3.7 KB", icon: FileText, category: "Documentation", file: "assembly-guide.md" },
+  { name: "Calibration Manual", format: "MD", size: "4.1 KB", icon: FileText, category: "Documentation", file: "calibration-manual.md" },
 ];
 
 const categories = [...new Set(files.map(f => f.category))];
 
 const DownloadSection = () => {
   return (
-    <section className="py-20 bg-card/30">
+    <section id="downloads" className="py-20 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-primary font-display text-sm tracking-widest uppercase">Design Files</span>
@@ -44,9 +53,11 @@ const DownloadSection = () => {
                 {files
                   .filter(f => f.category === category)
                   .map((file) => (
-                    <div
+                    <button
                       key={file.name}
-                      className="glass-card rounded-xl p-4 flex items-center justify-between group hover:border-primary/50 transition-all duration-300"
+                      type="button"
+                      onClick={() => handleDownload(file.file)}
+                      className="glass-card rounded-xl p-4 flex items-center justify-between group hover:border-primary/50 transition-all duration-300 text-left"
                     >
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -57,28 +68,8 @@ const DownloadSection = () => {
                           <p className="text-xs text-muted-foreground">{file.format} • {file.size}</p>
                         </div>
                       </div>
-                      {file.url ? (
-                        <Button
-                          asChild
-                          variant="ghost"
-                          size="icon"
-                          className="opacity-0 group-hover:opacity-100 transition-opacity"
-                        >
-                          <a href={file.url} download aria-label={`Download ${file.name}`}>
-                            <Download className="w-4 h-4" />
-                          </a>
-                        </Button>
-                      ) : (
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          disabled
-                          className="opacity-40 cursor-not-allowed"
-                        >
-                          <Download className="w-4 h-4" />
-                        </Button>
-                      )}
-                    </div>
+                      <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </button>
                   ))}
               </div>
             </div>

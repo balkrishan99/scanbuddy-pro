@@ -6,7 +6,8 @@ import {
   Image,
   Code,
   ExternalLink,
-  Zap
+  Zap,
+  FileOutput
 } from "lucide-react";
 
 const ExportInteroperability = () => {
@@ -28,6 +29,67 @@ const ExportInteroperability = () => {
       { ext: ".JPG", name: "Compressed", use: "File Size", color: "text-amber-400" },
       { ext: ".MTL", name: "Material Library", use: "OBJ Materials", color: "text-indigo-400" },
     ],
+  };
+
+  const exportSamples = [
+    {
+      name: "OBJ + MTL",
+      description: "Universal mesh format with materials",
+      software: ["Blender", "Maya", "3ds Max", "Cinema 4D"],
+      recommended: true,
+      files: ["sample-scan.obj", "sample-scan.mtl"],
+    },
+    {
+      name: "STL",
+      description: "3D printing standard format",
+      software: ["Cura", "PrusaSlicer", "Simplify3D"],
+      recommended: true,
+      files: ["sample-scan.stl"],
+    },
+    {
+      name: "PLY",
+      description: "Point cloud with color data",
+      software: ["CloudCompare", "MeshLab", "PCL"],
+      recommended: false,
+      files: ["sample-scan.ply"],
+    },
+    {
+      name: "GLTF/GLB",
+      description: "Web-optimized 3D format",
+      software: ["Three.js", "Babylon.js", "Sketchfab"],
+      recommended: true,
+      files: ["sample-scan.gltf"],
+    },
+    {
+      name: "FBX",
+      description: "Animation-ready format",
+      software: ["Unity", "Unreal Engine", "Maya"],
+      recommended: false,
+      files: ["sample-scan.fbx"],
+    },
+    {
+      name: "XYZ",
+      description: "Raw point coordinates",
+      software: ["Custom scripts", "MATLAB", "Python"],
+      recommended: false,
+      files: ["sample-scan.xyz"],
+    },
+  ];
+
+  const addBase = (path: string) => {
+    const base = import.meta.env.BASE_URL || "/";
+    const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+    const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+    return `${normalizedBase}${normalizedPath}`;
+  };
+
+  const handleDownload = (filename: string) => {
+    const link = document.createElement("a");
+    link.href = addBase(`downloads/${filename}`);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const softwarePresets = [
@@ -151,29 +213,81 @@ const ExportInteroperability = () => {
           </div>
         </div>
 
-        {/* Software Presets */}
-        <div className="glass-card rounded-2xl border border-border/50 overflow-hidden mb-12">
-          <div className="bg-secondary/30 border-b border-border/50 px-6 py-4 flex items-center gap-3">
-            <ExternalLink className="w-5 h-5 text-primary" />
-            <h3 className="font-display font-bold text-lg text-foreground">Direct Export Presets</h3>
+        <div className="grid lg:grid-cols-2 gap-6 mb-12">
+          {/* Sample Downloads */}
+          <div className="glass-card rounded-2xl border border-border/50 overflow-hidden">
+            <div className="bg-secondary/30 border-b border-border/50 px-6 py-4 flex items-center gap-3">
+              <FileOutput className="w-5 h-5 text-primary" />
+              <h3 className="font-display font-bold text-lg text-foreground">Sample Export Downloads</h3>
+            </div>
+            <div className="p-6 space-y-3">
+              {exportSamples.map((format) => (
+                <div
+                  key={format.name}
+                  className="p-4 bg-background/50 rounded border border-border/40 hover:border-primary/40 transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-sm font-bold text-foreground">{format.name}</h4>
+                        {format.recommended && (
+                          <span className="px-2 py-0.5 bg-primary/20 text-primary text-[10px] rounded">
+                            RECOMMENDED
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">{format.description}</p>
+                    </div>
+                    <div className="flex gap-1">
+                      {format.files.map((file) => (
+                        <button
+                          key={file}
+                          type="button"
+                          onClick={() => handleDownload(file)}
+                          className="p-2 hover:bg-primary/20 rounded transition-colors group"
+                          aria-label={`Download ${file}`}
+                        >
+                          <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {format.software.map((sw) => (
+                      <span key={sw} className="px-2 py-1 bg-secondary/50 text-xs text-muted-foreground rounded">
+                        {sw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {softwarePresets.map((preset) => (
-              <div key={preset.name} className="p-4 rounded-xl bg-secondary/30 border border-border/30 hover:border-primary/50 transition-colors">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">{preset.icon}</span>
-                  <h4 className="font-display font-bold text-foreground">{preset.name}</h4>
+
+          {/* Software Presets */}
+          <div className="glass-card rounded-2xl border border-border/50 overflow-hidden">
+            <div className="bg-secondary/30 border-b border-border/50 px-6 py-4 flex items-center gap-3">
+              <ExternalLink className="w-5 h-5 text-primary" />
+              <h3 className="font-display font-bold text-lg text-foreground">Direct Export Presets</h3>
+            </div>
+            <div className="p-6 grid sm:grid-cols-2 gap-4">
+              {softwarePresets.map((preset) => (
+                <div key={preset.name} className="p-4 rounded-xl bg-secondary/30 border border-border/30 hover:border-primary/50 transition-colors">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{preset.icon}</span>
+                    <h4 className="font-display font-bold text-foreground">{preset.name}</h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">{preset.description}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {preset.formats.map((fmt) => (
+                      <span key={fmt} className="text-xs font-mono bg-primary/20 text-primary px-2 py-0.5 rounded">
+                        {fmt}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-xs text-muted-foreground mb-3">{preset.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {preset.formats.map((fmt) => (
-                    <span key={fmt} className="text-xs font-mono bg-primary/20 text-primary px-2 py-0.5 rounded">
-                      {fmt}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
