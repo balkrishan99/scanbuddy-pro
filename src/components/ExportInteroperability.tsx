@@ -83,15 +83,6 @@ const ExportInteroperability = () => {
     return `${normalizedBase}${normalizedPath}`;
   };
 
-  const handleDownload = (filename: string) => {
-    const link = document.createElement("a");
-    link.href = addBase(`downloads/${filename}`);
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const softwarePresets = [
     {
       name: "Blender",
@@ -240,15 +231,15 @@ const ExportInteroperability = () => {
                     </div>
                     <div className="flex gap-1">
                       {format.files.map((file) => (
-                        <button
+                        <a
                           key={file}
-                          type="button"
-                          onClick={() => handleDownload(file)}
+                          href={addBase(`downloads/${file}`)}
+                          download={file}
                           className="p-2 hover:bg-primary/20 rounded transition-colors group"
                           aria-label={`Download ${file}`}
                         >
                           <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                        </button>
+                        </a>
                       ))}
                     </div>
                   </div>

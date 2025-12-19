@@ -8,15 +8,6 @@ const addBase = (path: string) => {
   return `${normalizedBase}${normalizedPath}`;
 };
 
-const handleDownload = (file: string) => {
-  const link = document.createElement("a");
-  link.href = addBase(`downloads/${file}`);
-  link.download = file;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
 const files = [
   { name: "External Shell CAD", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", file: "external-shell.step" },
   { name: "Internal Layout", format: "STEP", size: "1.4 KB", icon: FileCode, category: "CAD Files", file: "internal-layout.step" },
@@ -53,10 +44,10 @@ const DownloadSection = () => {
                 {files
                   .filter(f => f.category === category)
                   .map((file) => (
-                    <button
+                    <a
                       key={file.name}
-                      type="button"
-                      onClick={() => handleDownload(file.file)}
+                      href={addBase(`downloads/${file.file}`)}
+                      download={file.file}
                       className="glass-card rounded-xl p-4 flex items-center justify-between group hover:border-primary/50 transition-all duration-300 text-left"
                     >
                       <div className="flex items-center gap-4">
@@ -69,7 +60,7 @@ const DownloadSection = () => {
                         </div>
                       </div>
                       <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </button>
+                    </a>
                   ))}
               </div>
             </div>
