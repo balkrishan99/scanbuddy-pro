@@ -1,11 +1,11 @@
 # LowCost3DScanner (OpenScan3D)
 
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)
+![Platform](https://img.shields.io/badge/Platform-Professional%20Access-blue)
 ![Build Cost](https://img.shields.io/badge/Cost-~%24150-orange)
 ![Accuracy](https://img.shields.io/badge/Accuracy-%C2%B10.1mm-blue)
 ![License](https://img.shields.io/badge/License-MIT%20%7C%20CERN%20OHL-success)
 
-> **Open-source, low-cost, high-precision 3D laser scanner ecosystem** for makers, researchers, and fabrication labs.
+> **Low-cost, high-precision 3D laser scanner ecosystem** for makers, researchers, and fabrication labs.
 
 ![Hero Scan Animation](assets/hero_scan.gif)
 

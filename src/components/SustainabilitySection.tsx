@@ -11,8 +11,8 @@ const SustainabilitySection = () => {
   const points = [
     {
       icon: Code,
-      title: "Open-Source Software",
-      description: "Free app reduces barriers to entry and encourages community contributions",
+      title: "Accessible Software",
+      description: "Free app reduces barriers to entry and encourages broad participation",
     },
     {
       icon: Smartphone,

@@ -14,16 +14,16 @@ const LicensingDeployment = () => {
     {
       component: "App Software",
       license: "MIT License",
-      type: "Open Source",
+      type: "Software License",
       icon: Code,
       details: "Free to use, modify, and distribute. Attribution required.",
     },
     {
       component: "Hardware Designs",
       license: "CERN OHL v2",
-      type: "Open Hardware",
+      type: "Hardware License",
       icon: Cpu,
-      details: "Open hardware license. Modifications must remain open.",
+      details: "Hardware license requiring derivative designs to stay shareable.",
     },
     {
       component: "Documentation",
@@ -45,7 +45,7 @@ const LicensingDeployment = () => {
         "All export formats",
         "Basic processing",
         "Community support",
-        "Open source access",
+        "Core platform access",
       ],
       target: "Makers, Students, Hobbyists",
     },
@@ -90,7 +90,7 @@ const LicensingDeployment = () => {
             Licensing & <span className="gradient-text">Deployment</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Open-source core with optional premium features
+            Flexible access with optional premium support tiers
           </p>
         </div>
 
@@ -144,13 +144,13 @@ const LicensingDeployment = () => {
           ))}
         </div>
 
-        {/* Open Source Note */}
+        {/* Access Assurance */}
         <div className="glass-card rounded-2xl border border-emerald-500/30 p-8 text-center">
           <Github className="w-12 h-12 text-foreground mx-auto mb-4" />
-          <h3 className="font-display font-bold text-xl text-foreground mb-2">100% Open Source Core</h3>
+          <h3 className="font-display font-bold text-xl text-foreground mb-2">Core Access Guarantee</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            The core scanning, processing, and export functionality will always be free and open source. 
-            Premium tiers fund development and provide additional convenience features, not paywalled essentials.
+            Essential scanning, processing, and export capabilities remain available without a subscription. 
+            Paid tiers fund continued development while unlocking enhanced automation, support, and collaboration tools.
           </p>
         </div>
       </div>

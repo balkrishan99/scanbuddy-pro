@@ -26,7 +26,7 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-display tracking-wider">
-                OPEN SOURCE PROJECT
+                PROFESSIONAL SCANNER PLATFORM
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight">
                 ScanBuddy-Pro

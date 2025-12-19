@@ -12,7 +12,7 @@
 
 ## Introduction
 
-Welcome to the ScanBuddy-Pro assembly guide. This document will walk you through building your own open-source 3D laser scanner. Estimated assembly time: 2-3 hours.
+Welcome to the ScanBuddy-Pro assembly guide. This document will walk you through building your own 3D laser scanner. Estimated assembly time: 2-3 hours.
 
 ---
 

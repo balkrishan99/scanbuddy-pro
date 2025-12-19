@@ -173,7 +173,7 @@ const ProjectRoadmap = () => {
         <div className="mt-16 glass-card rounded-2xl border border-primary/30 p-8 text-center">
           <h3 className="font-display font-bold text-2xl text-foreground mb-4">Long-Term Vision</h3>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            OpenScan3D aims to democratize 3D scanning technology, making professional-quality 3D capture accessible to everyone — from students and makers to researchers and small businesses. Our commitment to open-source development ensures continuous innovation driven by community needs.
+            OpenScan3D aims to democratize 3D scanning technology, making professional-quality 3D capture accessible to everyone — from students and makers to researchers and small businesses. Our commitment to open collaboration ensures continuous innovation driven by community needs.
           </p>
         </div>
       </div>

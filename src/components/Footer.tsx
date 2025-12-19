@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>Open-source hardware project. Licensed under CERN-OHL-S v2.</p>
+          <p>Hardware project. Licensed under CERN-OHL-S v2.</p>
         </div>
       </div>
     </footer>

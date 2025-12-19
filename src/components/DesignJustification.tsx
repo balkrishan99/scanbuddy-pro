@@ -25,7 +25,7 @@ const DesignJustification = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Utilizes commodity components (Arduino, standard camera modules, NEMA steppers) 
                     available globally. 3D printed housing eliminates expensive injection molding. 
-                    Open-source software removes licensing costs.
+                    Streamlined licensing keeps software costs predictable.
                   </p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ const DesignJustification = () => {
                   <h3 className="font-display text-lg mb-2">Scalability & Adoption</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Modular design allows easy upgrades. Community-driven improvements via 
-                    open-source model. Mass production reduces cost to ~$45/unit. 
+                    shared reference builds. Mass production reduces cost to ~$45/unit. 
                     Compatible with existing 3D printing and modeling workflows.
                   </p>
                 </div>
